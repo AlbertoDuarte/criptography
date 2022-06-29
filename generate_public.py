@@ -9,10 +9,10 @@ with open('info.json', 'r') as f:
 try:
     key = int(input("Insert your private key: "))
 
-    assert(gen < p)
+    assert(int(gen) < int(p))
 except ValueError:
     print("All input should be positive integers and g < p")
 
-public = modular_exp(gen, key, p)
+public = modular_exp(int(gen), int(key), int(p))
 print("Your public key is:")
 print(public)
